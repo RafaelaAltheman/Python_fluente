@@ -36,3 +36,28 @@
 ## key: define o critério de ordenação
 
 ### sorted(deck, key=spades_high)
+
+# 6. __init__ 
+
+## Inicializa o objeto
+
+# 7. __repr__
+
+## Define como objeto aparece no terminal, formato string
+
+# 8. __abs__
+
+## apresenta o módulo do vetor
+
+# 9. __bool__
+
+## Define o valor lógico do objeto, se for um vetor nulo (False) e Vetor com valor(True)
+
+# 10. __add__
+
+## Define o operador + 
+
+# 11. __mul__ 
+
+## Multiplicação escalar, retorna novo vetor que tenha a mesma direção
+
