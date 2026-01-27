@@ -80,6 +80,10 @@ O capítulo discute como diferentes estruturas expressam intenção no código:
 
 São comparados tipos como `tuple`, `NamedTuple` e `dataclass`, mostrando que a escolha da estrutura afeta o código.
 
+tuple: Uma tuple é uma coleção ordenada e imutável.
+NamedTuple: Uma tuple com nomes para os campos. 
+dataClass: Versão moderna do namedtuple, com anotações de tipo.
+
 Ideia principal: escolher a estrutura correta é uma decisão importante, não apenas técnica.
 
 ---
