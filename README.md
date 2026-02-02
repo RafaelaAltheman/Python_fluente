@@ -3,7 +3,9 @@
 
 ## Capítulo 1 — Modelo de Dados do Python
 
-O modelo de dados do Python é baseado em protocolos, e não em herança rígida.  
+O modelo de dados do Python é o conjunto de regras para definir como os objetos vão se comportar.
+
+Python não é orientado por tipo fixo, ou seja importa o que o objeto faz, não o que ele é.                        
 Objetos se integram ao ecossistema da linguagem ao implementar métodos especiais como:
 
 - `__len__`: retorna o tamanho de um objeto.
@@ -12,7 +14,6 @@ Objetos se integram ao ecossistema da linguagem ao implementar métodos especiai
 - `__repr__`: Define como o objeto aparece quando você imprime.
 
 Funções embutidas (`len`, `sorted`, `sum`) e operadores (`in`, `[]`) não verificam o tipo do objeto, mas sim se ele suporta determinado comportamento.  
-importa o que o objeto faz, não o que ele é.
 
 Ideia principal: implementar poucos métodos especiais já permite que um objeto se comporte como tipo do Python.
 
@@ -20,12 +21,15 @@ Ideia principal: implementar poucos métodos especiais já permite que um objeto
 
 ## Capítulo 2 — Sequências
 
-Sequências em Python representam uma interface conceitual.  
+Python possui vários tipos de sequência: list, tuple, str, range...
 Ao implementar apenas `__getitem__`, um objeto já pode:
 
-- ser iterado
-- suportar slicing
+- ser iterado (for)
+- suportar slicing (:)
 - funcionar com o operador `in`: Operador que verifica se um elemento pertence a uma coleção.
+
+Mutáveis: podem ser alteradas no lugar (list)
+Imutáveis: não mudam depois de criadas (tuple)
 
 Isso demonstra como o Python reutiliza comportamentos existentes sem exigir herança explícita de classes.  
 Muitas funcionalidades surgem automaticamente a partir de poucos métodos bem definidos.
@@ -39,12 +43,19 @@ Ideia principal: o Python favorece reutilização de comportamento por meio de p
 O `dict` é a estrutura de dados central do Python.  
 Seu funcionamento depende de hashing, o que impõe regras importantes:
 
-- chaves devem ser imutáveis
+- chaves devem ser imutáveis, porque dependem de um hash que não pode mudar
 - `__hash__` deve ser consistente com `__eq__`
 
-O capítulo também explora os conjuntos (`set`), destacando seu uso como ferramenta lógica.
+hashing: transforma um objeto em um valor numérico fixo, para localizar valores em dict.
+
+O capítulo também explora os conjuntos (`set`).
 
 Mais do que estruturas de armazenamento, dicionários e conjuntos comunicam no código.
+
+Usos: 
+- list: coleção ordenada e mutável
+- tuple: coleção ordenada e imutável
+- dict: associação chave --> valor
 
 Ideia principal: `dict` e `set` são ferramentas conceituais, não apenas coleções de dados.
 
@@ -66,7 +77,11 @@ O livro apresenta o conceito do sanduíche de Unicode:
 
 Também é discutida a normalização Unicode, necessária para comparar strings visualmente idênticas mas binariamente diferentes.
 
-Ideia principal: muitos bugs de string são causados por mistura errada de texto e bytes.
+Diferença str e bytes: 
+- str: texto unicode
+- bytes: dados binários
+
+Ideia principal: muitos bugs de string são causados por mistura errada de texto e bytes. Por isso, sempre decodificar bytes para string e só dar encode para bytes na saída.
 
 ---
 
@@ -80,9 +95,9 @@ O capítulo discute como diferentes estruturas expressam intenção no código:
 
 São comparados tipos como `tuple`, `NamedTuple` e `dataclass`, mostrando que a escolha da estrutura afeta o código.
 
-- tuple: Uma tuple é uma coleção ordenada e imutável.
+- tuple: Uma tuple é uma coleção ordenada e imutável. Usar para análises simples, em que a posição do elemento importa
 - NamedTuple: Uma tuple com nomes para os campos. 
-- dataClass: Versão moderna do namedtuple, com anotações de tipo.
+- dataClass: Versão moderna do namedtuple, com anotações de tipo. (padrão moderno para modelar os dados, tem métodos automáticos)
 
 Ideia principal: escolher a estrutura correta é uma decisão importante, não apenas técnica.
 
