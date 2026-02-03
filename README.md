@@ -66,6 +66,7 @@ Ideia principal: `dict` e `set` são ferramentas conceituais, não apenas coleç
 
 - `str` (texto Unicode)
 - `bytes` (dados binários)
+- ASCII
 
 Unicode define os caracteres; UTF-8 define como esses caracteres são representados em bytes.  
 Problemas surgem quando dados são codificados ou decodificados incorretamente.
