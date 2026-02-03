@@ -55,6 +55,7 @@ Mais do que estruturas de armazenamento, dicionários e conjuntos comunicam no c
 Usos: 
 - list: coleção ordenada e mutável
 - tuple: coleção ordenada e imutável
+- set: coleções de elementos únicos, que também tem super metódos, lista de elementos únicos
 - dict: associação chave --> valor
 
 Ideia principal: `dict` e `set` são ferramentas conceituais, não apenas coleções de dados.
